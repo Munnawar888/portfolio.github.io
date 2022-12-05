@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/images/fav.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/portfolio.css" />
+  <script
+    src="https://kit.fontawesome.com/115026860d.js"
+    crossorigin="anonymous"
+  ></script>
+  <style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: #000000;
+    color: #fff;
+}
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(/images/pro.jpg);
+    background-size: cover;
+   
+    background-position: center;
+    
+}
+.container{
+padding: 10px 80px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav>img{
+    width: 40px;
+    height: 40px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #01b7ff;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: .5s;
+}
+nav ul li a:hover::after{
+    width: 100%; 
+}
+.text{
+    margin-top: 15%;
+    font-size: 30px;
+}
+.text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+span{
+    color: #01b7ff;
+}
+
+/* ABOUT */
+#about{
+    padding: 80px 30px;
+  color:#888888
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.col-1 img{
+    width: 100%;
+    height:500px ;
+    border-radius: 30px;
+}
+.col-1{
+    flex-basis: 30%;
+}
+.col-2{
+    flex-basis: 65%;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+.tab-titles{
+display: flex;
+margin: 20px 0 40px;
+}
+.tab-links{
+  margin-right: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #01b7ff;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: .5s;
+}
+.tab-links.active-link::after{
+    width: 50%;
+    }
+.tab-links:hover::after{
+    width: 100%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-content ul li span{
+    font-size: 18px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+/* SERVICES */
+#services{
+    padding: 30px 0;
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s;
+    transition: transform 0.5s;
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.services-list div a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    
+    display: inline;
+}
+.services-list div p{
+    margin-bottom: 20px;
+}
+.services-list div:hover{
+    background:#007bac;
+    transform: translateY(-10px);
+}
+
+/* PORTFOLIO */
+.portfolio{
+    padding:50px 0 ;
+}
+.worklist{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    height: 365px;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #007bac);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 30px;
+    color: #0479ff;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 50px;
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #01b7ff;
+    padding: 14px 50px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s
+    
+}
+.btn:hover{
+    background: #01b7ff;
+    color: #000000;
+}
+
+/* CONTACT */
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p i{
+    color: #01b7ff;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icon{
+    margin-top: 30px;
+}
+.social-icon a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icon a:hover{
+    color: #01b7ff;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: #01b7ff;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 15px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* CSS FOR SMALL SCREEN */
+nav .fas{
+    display: none;
+}
+@media only screen and (max-width: 600px){
+    .header{
+        background-image: url(/);
+    }
+    .text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .text h1{
+        font-size: 30px;
+    }
+    nav .fas{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background: #01b7ff;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top:50px ;
+        z-index: 1;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fas{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .sub-title{
+        font-size: 40px;
+    }
+    .col-1, .col-2{
+        flex-basis: 100%;
+    }
+    .col-1{
+        margin-bottom: 30px;
+    }
+    .col2{
+        font-size: 14px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+}
+
+  </style>
+</head>
+  <body>
+    <div class="header" id="header">
+      <div class="container">
+        <nav>
+          <img src="/images/p_logo.png" alt="logo" />
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Service</a></li>
+            <li><a href="#portfolio">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="text">
+          <p>Web Designer & Developer</p>
+          <h1>
+            Hi, I'm <span>Munnawar</span><br />
+            Hussain
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT ME -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-1"><img src="/images/pro2.jpg" /></div>
+          <div class="col-2">
+            <h1 class="sub-title">About me</h1>
+            <p>
+                I am a JavaScript developer and a web designer. My expertise is in the area of responsive design. With every line of code, I strive to make the web a beautiful place.
+            </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skill
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>Figma</span><br />Designing web interfaces</li>
+                <li>
+                  <span>Web development</span><br />Designing responsive website
+                </li>
+                <li><span>Bootstrap</span><br />Css framework</li>
+                <li><span>React js</span><br />Javascript framework</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>2022</span><br />Bachelors of commerce</li>
+                <li><span>2019</span><br />12th</li>
+                <li><span>2017</span><br />10th</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SERVICE -->
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fas fa-crop-alt"></i>
+            <h2>Web Design</h2>
+            <p>
+                A website can influence potential customers' decisions about whether or not to use your services or products. Your website's usability can be improved with UI/UX. A good customer's experience on your website will build a good relationship between a client and a company. It helps you get better results in the long run. It can help you generate more leads and improve conversion rates. This translates to better revenues for your company.
+            </p>
+            <a href="#">Know more</a>
+          </div>
+          <div>
+            <i class="fab fa-wordpress"></i>
+            <h2>Wordpress website</h2>
+            <p>
+                I can help you build a website that meets your unique needs. Start a blog, business site, portfolio, online store, or anything else you can imagine. Your website will have responsive, mobile-ready themes, and there’s no limit to who you can reach with your new website. A simple website for your family or business to reach around the world—it’s up to you.
+            </p>
+            <a href="#">Know more</a>
+          </div>
+          <div>
+            <i class="fas fa-code"></i>
+            <h2>MERN Development</h2>
+            <p>
+                The MERN stack offers the most superior performance in terms of speed and overall functionality. It is an excellent choice for companies wishing to develop high-quality web applications.
+            </p>
+            <a href="#">Know more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- PORTFOLIO -->
+    <div class="portfolio" id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="worklist">
+          <div class="work">
+            <img src="/images/work1.jpg" alt="" />
+            <div class="layer">
+              <h3>Calculator</h3>
+              <p>
+                description Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit. Nihil, soluta?
+              </p>
+              <a href="https://github.com/Munnawar888?tab=repositories"><i class="fas fa-external-link-alt"></i> </a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="/images/work2.jpg" alt="" />
+            <div class="layer">
+              <h3>Todo List</h3>
+              <p>
+                description Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit. Nihil, soluta?
+              </p>
+              <a href="https://github.com/Munnawar888?tab=repositories"><i class="fas fa-external-link-alt"></i> </a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="/images/work3.jpg" alt="" />
+            <div class="layer">
+              <h3>Tic Tac Toe</h3>
+              <p>
+                description Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit. Nihil, soluta?
+              </p>
+              <a href="https://github.com/Munnawar888?tab=repositories"><i class="fas fa-external-link-alt"></i> </a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+      </div>
+    </div>
+    <!-- CONTACT -->
+    <div id="contact" >
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="subtitle">Contact Me</h1>
+            <p><i class="fas fa-paper-plane"></i> munnawarmallick@gmail.com</p>
+            <p><i class="fas fa-phone-square-alt"></i> 7838837924</p>
+            <div class="social-icon">
+              <a href="https://www.facebook.com/munnawar.mallick"><i class="fab fa-facebook"></i></a>
+              <a href="https://twitter.com/Munnawar888"><i class="fab fa-twitter-square"></i></a>
+              <a href="https://www.instagram.com/munnawar888/"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/munnawar-hussain-186a3b221/"><i class="fab fa-linkedin"></i></a>
+              <a href="https://github.com/Munnawar888"><i class="fab fa-github"></i></a>
+            </div>
+            <a href="/CV. (1).docx" download class="btn btn2">Download CV</a>
+          </div>
+          <div class="contact-right">
+            <form>
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="Email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+   function opentab(tabname){
+    for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+   }
+   event.currentTarget.classList.add("active-link");
+   document.getElementById(tabname).classList.add("active-tab")
+}
+
+var sidemenu = document.getElementById("sidemenu");
+function openmenu(){
+    sidemenu.style.right = "0";
+}
+function closemenu(){
+    sidemenu.style.right = "-200px";
+}
+  </script>
+
+</html>
